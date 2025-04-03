@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokedle Clásico</title>
+    <link rel="stylesheet" href="../styles/juego-clasico.css" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="icon" type="image/png" href="../assets/pokeball.png" />
+  </head>
+  <body>
+    <div id="loader" class="loader-container">
+      <div class="pokeball-loader"></div>
+      <p class="loader-text">Cargando Pokedle...</p>
+    </div>
+
+    <div class="game-container animated" id="gameContent">
+      <div class="volver-atras" onclick="goHome()">Volver atras</div>
+      <div class="game-header">
+        <img
+          class="game-title-image"
+          src="../assets/pokedle_titulo.png"
+          alt="Pokedle"
+          class="animated"
+        />
+        <h1 class="game-title">Clasico</h1>
+        <p class="text-btn">Adivina el Pokemon oculto</p>
+      </div>
+
+      <div class="search-section">
+        <div class="search-container">
+          <input
+            type="text"
+            id="pokemonInput"
+            placeholder="Escribe un Pokemon..."
+          />
+          <div id="suggestions"></div>
+        </div>
+        <button id="confirmPokemon">Adivinar</button>
+      </div>
+
+      <div class="attributes-section">
+        <div class="attributes-header">
+          <div class="attribute-badge">Pokemon</div>
+          <div class="attribute-badge">Tipo 1</div>
+          <div class="attribute-badge">Tipo 2</div>
+          <div class="attribute-badge">Etapa</div>
+          <div class="attribute-badge">Evolucion</div>
+          <div class="attribute-badge">Color</div>
+          <div class="attribute-badge">Hábitat</div>
+          <div class="attribute-badge">Generacion</div>
+        </div>
+
+        <div class="attributes-grid" id="guessesContainer"></div>
+      </div>
+    </div>
+
+    <script type="module" src="../services/script.js"></script>
+    <script src="../main.js"></script>
+  </body>
+</html>

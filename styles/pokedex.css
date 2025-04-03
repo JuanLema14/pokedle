@@ -1,0 +1,264 @@
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  margin: 0;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../assets/pokedle_theme.png");
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+#pokedex-container {
+  display: flex;
+  width: 90%;
+  max-width: 100%;
+  height: 90vh;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+@font-face {
+  font-family: "RetroComputer";
+  src: url("../assets/font/retro_computer.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "PokemonSolid";
+  src: url("../assets/font/Pokemon\ Solid.ttf") format("truetype");
+}
+
+#pokemon-detail {
+  width: 40%;
+  background: #f44336;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+#pokemon-image {
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  align-items: center;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+#pokemon-image img {
+  width: 11vmax;
+  height: 11vmax;
+}
+
+#pokemon-image #default-pokemon-image {
+  width: 6vmax;
+  height: 6vmax;
+}
+
+#pokemon-name {
+  font-family: "RetroComputer", sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 2vmax;
+}
+
+.pokemon-name-list {
+  font-family: "RetroComputer", sans-serif;
+  font-size: 0.6vmax;
+  font-weight: bold;
+}
+
+#pokemon-description {
+  width: 20vmax;
+  color: black;
+  background: white;
+  padding: 1vmax;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-family: "RetroComputer", sans-serif;
+  font-size: 10px;
+  text-align: center;
+}
+
+#pokemon-list-container {
+  width: 60%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+}
+
+#pokemon-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  width: 100%;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.pokemon-card {
+  background: #ffcc00;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+  font-family: "RetroComputer", sans-serif;
+  font-size: 0.5rem;
+}
+
+.pokemon-card:hover {
+  filter: brightness(1.1);
+}
+
+#pagination {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  margin-top: 2vmax;
+  gap: 10px;
+}
+
+#pagination button {
+  background: #2a5df4;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "RetroComputer", sans-serif;
+  font-size: 0.7rem;
+}
+
+#pagination button:hover {
+  background: rgb(10, 68, 126);
+}
+
+#page-number {
+  width: 2vmax;
+  height: 2vmax;
+  border-radius: 4px;
+  background: #ffcc00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "RetroComputer", sans-serif;
+  color: white;
+}
+
+h1 {
+  font-family: "PokemonSolid", sans-serif;
+  font-size: 2rem;
+  margin: 0;
+  padding: 0;
+  color: #ffcd01;
+  text-shadow: 2px 2px 0 #1e356d, 4px 4px 0 #2a5df4;
+
+  text-shadow: rgb(42, 93, 244) 7px 0px 0px,
+    rgb(42, 93, 244) 6.92869px 0.996602px 0px,
+    rgb(42, 93, 244) 6.71622px 1.9729px 0px,
+    rgb(42, 93, 244) 6.36692px 2.909px 0px,
+    rgb(42, 93, 244) 5.8879px 3.78584px 0px,
+    rgb(42, 93, 244) 5.28893px 4.58555px 0px,
+    rgb(42, 93, 244) 4.5822px 5.29183px 0px,
+    rgb(42, 93, 244) 3.78212px 5.8903px 0px,
+    rgb(42, 93, 244) 2.90498px 6.36876px 0px,
+    rgb(42, 93, 244) 1.96865px 6.71747px 0px,
+    rgb(42, 93, 244) 0.992221px 6.92932px 0px,
+    rgb(42, 93, 244) -0.00442571px 7px 0px,
+    rgb(42, 93, 244) -1.00098px 6.92806px 0px,
+    rgb(42, 93, 244) -1.97715px 6.71498px 0px,
+    rgb(42, 93, 244) -2.91303px 6.36508px 0px,
+    rgb(42, 93, 244) -3.78956px 5.88551px 0px,
+    rgb(42, 93, 244) -4.58889px 5.28603px 0px,
+    rgb(42, 93, 244) -5.29472px 4.57885px 0px,
+    rgb(42, 93, 244) -5.89269px 3.77839px 0px,
+    rgb(42, 93, 244) -6.3706px 2.90095px 0px,
+    rgb(42, 93, 244) -6.71871px 1.96441px 0px,
+    rgb(42, 93, 244) -6.92995px 0.98784px 0px,
+    rgb(42, 93, 244) -6.99999px -0.00885142px 0px,
+    rgb(42, 93, 244) -6.92743px -1.00536px 0px,
+    rgb(42, 93, 244) -6.71372px -1.98139px 0px,
+    rgb(42, 93, 244) -6.36324px -2.91705px 0px,
+    rgb(42, 93, 244) -5.88311px -3.79328px 0px,
+    rgb(42, 93, 244) -5.28313px -4.59223px 0px,
+    rgb(42, 93, 244) -4.57551px -5.29762px 0px,
+    rgb(42, 93, 244) -3.77467px -5.89507px 0px,
+    rgb(42, 93, 244) -2.89692px -6.37243px 0px,
+    rgb(42, 93, 244) -1.96016px -6.71995px 0px,
+    rgb(42, 93, 244) -0.983458px -6.93057px 0px,
+    rgb(42, 93, 244) 0.0132771px -6.99999px 0px,
+    rgb(42, 93, 244) 1.00974px -6.92679px 0px,
+    rgb(42, 93, 244) 1.98564px -6.71247px 0px,
+    rgb(42, 93, 244) 2.92107px -6.36139px 0px,
+    rgb(42, 93, 244) 3.797px -5.88071px 0px,
+    rgb(42, 93, 244) 4.59557px -5.28022px 0px,
+    rgb(42, 93, 244) 5.30051px -4.57215px 0px,
+    rgb(42, 93, 244) 5.89746px -3.77094px 0px,
+    rgb(42, 93, 244) 6.37426px -2.89289px 0px,
+    rgb(42, 93, 244) 6.72119px -1.95591px 0px,
+    rgb(42, 93, 244) 6.93119px -0.979076px 0px;
+}
+
+#region-selector {
+  width: 100%;
+  padding-bottom: 3vmax;
+  text-align: center;
+  font-family: "RetroComputer", sans-serif;
+  color: white;
+}
+
+#regions {
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  font-family: "RetroComputer", sans-serif;
+}
+
+.regions-select {
+  font-size: 0.8rem;
+  font-family: "RetroComputer", sans-serif;
+}
+
+.regions-options {
+  font-size: 0.8rem;
+  font-family: "RetroComputer", sans-serif;
+}
+
+.type-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 10px;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  font-family: "RetroComputer", sans-serif;
+  top: 4vmax;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokedle - Adivina el Pokemon</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="./assets/pokeball.png" />
+  </head>
+  <body>
+    <div id="menu-container">
+      <img
+        id="game-title"
+        src="./assets/pokedle_titulo.png"
+        alt="Pokedle"
+        class="animated"
+      />
+      <p class="text-btn animated" style="color: white">
+        Elige un modo de juego:
+      </p>
+
+      <div class="container">
+        <div class="pixel-btn" onclick="goToPokedex()">
+          <p class="text-btn">Pokedex</p>
+        </div>
+        <div class="pixel-btn animated" onclick="goToPokedleClasico()">
+          <p class="text-btn">Clasico</p>
+        </div>
+        <div class="pixel-btn animated" onclick="startSilhouetteGame()">
+          <p class="text-btn">Silueta</p>
+        </div>
+        <div class="pixel-btn animated" onclick="startDescriptionGame()">
+          <p class="text-btn">Descripcion</p>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

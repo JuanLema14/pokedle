@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+body {
+  background-image: url("./assets/pokedle_theme.png");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+@font-face {
+  font-family: "RetroComputer";
+  src: url("./assets/font/retro_computer.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "PokemonSolid";
+  src: url("./assets/font/Pokemon\ Solid.ttf") format("truetype");
+}
+
+#game-title {
+  width: 80%;
+  max-width: 400px;
+  display: block;
+  margin: 0 auto;
+}
+
+.text-btn {
+  font-family: "RetroComputer", sans-serif;
+  padding-top: 0.5vmax;
+  font-size: 1.2vmax;
+}
+
+.container {
+  display: flex;
+}
+
+.pixel-btn {
+  font-family: "RetroComputer", sans-serif;
+  display: flex;
+  justify-content: center;
+  width: 201px;
+  height: 89px;
+  background-image: url('./assets/boton_1.png');
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin: 1vmax;
+}
+
+.pixel-btn:hover {
+  filter: brightness(1.05);
+  padding-top: 1vmax;
+}
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animated {
+  opacity: 0;
+  animation: fadeInSlide 0.8s ease-in-out forwards;
+}
+
+
+.volver-atras {
+  width: fit-content;
+  font-family: "RetroComputer", sans-serif;
+  padding: 1vmax;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #f44336;
+  color: black;
+  position: sticky;
+  margin-bottom: 1vmax;
+}
+
+.volver-atras:hover {
+  filter: brightness(1.4);
+  color: white;
+}

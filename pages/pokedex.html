@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokédex - Pokedle</title>
+    <link rel="stylesheet" href="../styles/pokedex.css" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="icon" type="image/png" href="../assets/pokeball.png" />
+  </head>
+  <body>
+    <div id="pokedex-container" class="animated">
+      <div id="pokemon-detail">
+        <div class="volver-atras" onclick="goHome()">Volver atras</div>
+        <div id="region-selector">
+          <label for="regions" class="regions-select"
+            >Selecciona una region:</label
+          >
+          <select id="regions" onchange="filterByZone()">
+            <option class="regions-options" value="kanto">Kanto</option>
+            <option class="regions-options" value="johto">Johto</option>
+            <option class="regions-options" value="hoenn">Hoenn</option>
+            <option class="regions-options" value="sinnoh">Sinnoh</option>
+            <option class="regions-options" value="unova">Unova</option>
+            <option class="regions-options" value="kalos">Kalos</option>
+            <option class="regions-options" value="alola">Alola</option>
+            <option class="regions-options" value="galar">Galar</option>
+            <option class="regions-options" value="paldea">Paldea</option>
+          </select>
+        </div>
+
+        <div id="pokemon-image">
+          <img
+            src="../assets/pokeball.png"
+            alt="Pokéball"
+            id="default-pokemon-image"
+          />
+        </div>
+
+        <h2 id="pokemon-name">Selecciona un Pokemon</h2>
+        <p id="pokemon-description">Descripcion aparecera aqui...</p>
+      </div>
+
+      <div id="pokemon-list-container">
+        <h1>Pokédex</h1>
+        <div id="pokemon-list"></div>
+
+        <div id="pagination">
+          <button id="prev-page" onclick="changePage(-1)">Anterior</button>
+          <span id="page-number">1</span>
+          <button id="next-page" onclick="changePage(1)">Siguiente</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="../services/pokedex.js"></script>
+    <script src="../main.js"></script>
+  </body>
+</html>
