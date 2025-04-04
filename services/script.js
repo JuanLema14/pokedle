@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   let allPokemon = [];
   let chosenPokemon = null;
   let attempts = 0;
-  const maxAttempts = 6;
+  const maxAttempts = 12;
   let gameOver = false;
 
   async function initGame() {
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   async function loadPokemon() {
     try {
       const response = await fetch(
-        "https://pokeapi.co/api/v2/pokemon?limit=1025"
+        "https://pokeapi.co/api/v2/pokemon?limit=649"
       );
       if (!response.ok) throw new Error("Error en la respuesta de la API");
 
