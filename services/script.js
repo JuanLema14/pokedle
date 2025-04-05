@@ -58,7 +58,24 @@ document.addEventListener("DOMContentLoaded", async () => {
       console.log("Inicializando juego...");
       await loadPokemon();
       await selectRandomPokemon();
-      console.log("Juego listo. Pokémon oculto:", chosenPokemon.name);
+      // console.log("Juego listo. Pokémon oculto:", chosenPokemon.name);
+      const siluetaContainer = document.getElementById("silueta-container");
+
+      if (siluetaContainer) {
+        const silhouetteImg = document.createElement("img");
+        silhouetteImg.src = chosenPokemon.image;
+        silhouetteImg.alt = "Silueta Pokémon";
+        silhouetteImg.id = "pokemon-silhouette";
+        silhouetteImg.style.filter = "brightness(0) contrast(0)";
+        silhouetteImg.style.width = "100%";
+        silhouetteImg.style.maxHeight = "300px";
+        silhouetteImg.style.objectFit = "contain";
+        silhouetteImg.style.display = "block";
+        silhouetteImg.style.margin = "0 auto";
+        
+        siluetaContainer.innerHTML = "";
+        siluetaContainer.appendChild(silhouetteImg);
+      }
 
       input.disabled = false;
       guessButton.disabled = false;

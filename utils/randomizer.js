@@ -23,7 +23,7 @@ const TYPE_TRANSLATIONS = {
 
 async function getRandomPokemon() {
   try {
-    const maxPokemon = 1025;
+    const maxPokemon = 649;
     const randomId = Math.floor(Math.random() * maxPokemon) + 1;
 
     const response = await fetch(

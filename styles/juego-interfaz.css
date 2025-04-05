@@ -314,3 +314,36 @@ body::before {
     border-color: rgb(255, 230, 0);
   }
 }
+
+/* Estilos para el contenedor de silueta */
+#silueta-container {
+  width: 100%;
+  height: 300px;
+  margin: 20px 0;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Estilo para la silueta */
+#pokemon-silhouette {
+  filter: brightness(0) contrast(0);
+  transition: filter 0.3s ease;
+}
+
+/* Estilo para revelar progresivamente */
+#pokemon-silhouette.reveal-10 { filter: brightness(0.1) contrast(0.1); }
+#pokemon-silhouette.reveal-20 { filter: brightness(0.2) contrast(0.2); }
+#pokemon-silhouette.reveal-30 { filter: brightness(0.3) contrast(0.3); }
+#pokemon-silhouette.reveal-40 { filter: brightness(0.4) contrast(0.4); }
+#pokemon-silhouette.reveal-50 { filter: brightness(0.5) contrast(0.5); }
+#pokemon-silhouette.reveal-60 { filter: brightness(0.6) contrast(0.6); }
+#pokemon-silhouette.reveal-70 { filter: brightness(0.7) contrast(0.7); }
+#pokemon-silhouette.reveal-80 { filter: brightness(0.8) contrast(0.8); }
+#pokemon-silhouette.reveal-90 { filter: brightness(0.9) contrast(0.9); }
+#pokemon-silhouette.reveal-100 { filter: brightness(1) contrast(1); }

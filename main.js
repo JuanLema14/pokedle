@@ -16,6 +16,10 @@ function goToPokedleClasico() {
   window.location.href = "pages/juego-clasico.html";
 }
 
+function goToPokedleSilueta() {
+  window.location.href = "pages/juego-silueta.html";
+}
+
 function goHome() {
   window.location.href = "/";
 }
