@@ -2,9 +2,13 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>Pokedle Clásico</title>
     <link rel="stylesheet" href="../styles/juego-interfaz.css" />
+    <link rel="stylesheet" href="../styles/juego-interfaz-mobiles.css" />
     <link rel="stylesheet" href="../styles.css" />
     <link rel="icon" type="image/png" href="../assets/pokeball.png" />
   </head>
@@ -40,19 +44,18 @@
         <button id="confirmPokemon">Adivinar</button>
       </div>
 
+      <div class="attributes-header">
+        <div class="attribute-badge">Pokemon</div>
+        <div class="attribute-badge">Tipo 1</div>
+        <div class="attribute-badge">Tipo 2</div>
+        <div class="attribute-badge">Etapa</div>
+        <div class="attribute-badge">Evolucion</div>
+        <div class="attribute-badge">Color</div>
+        <div class="attribute-badge">Hábitat</div>
+        <div class="attribute-badge">Generacion</div>
+      </div>
       <div class="attributes-section">
-        <div class="attributes-header">
-          <div class="attribute-badge">Pokemon</div>
-          <div class="attribute-badge">Tipo 1</div>
-          <div class="attribute-badge">Tipo 2</div>
-          <div class="attribute-badge">Etapa</div>
-          <div class="attribute-badge">Evolucion</div>
-          <div class="attribute-badge">Color</div>
-          <div class="attribute-badge">Hábitat</div>
-          <div class="attribute-badge">Generacion</div>
-        </div>
-
-        <div class="attributes-grid" id="guessesContainer"></div>
+        <div class="attributes-grid-silueta" id="guessesContainer"></div>
       </div>
     </div>
 

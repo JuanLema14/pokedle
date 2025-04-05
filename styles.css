@@ -6,12 +6,29 @@
 }
 
 body {
-  background-image: url("./assets/pokedle_theme.png");
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   text-align: center;
+  padding: 20px;
+  overflow: auto;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("./assets/pokedle_theme.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: -1;
 }
 
 @font-face {
@@ -24,43 +41,65 @@ body {
   src: url("./assets/font/Pokemon\ Solid.ttf") format("truetype");
 }
 
+#menu-container {
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba  (0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 800px;
+  margin: 20px;
+}
+
 #game-title {
-  width: 80%;
+  width: 100%;
   max-width: 400px;
+  height: auto;
+  margin: 0 auto 20px;
   display: block;
-  margin: 0 auto;
 }
 
 .text-btn {
   font-family: "RetroComputer", sans-serif;
-  padding-top: 0.5vmax;
-  font-size: 1.2vmax;
+  font-size: clamp(16px, 2.5vw, 24px);
+  color: #333;
+  margin-bottom: 20px;
 }
 
 .container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
 }
 
 .pixel-btn {
   font-family: "RetroComputer", sans-serif;
   display: flex;
   justify-content: center;
-  width: 201px;
-  height: 89px;
+  align-items: center;
+  width: 180px;
+  height: 80px;
   background-image: url('./assets/boton_1.png');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   cursor: pointer;
-  font-size: 18px;
   color: white;
   text-align: center;
-  padding: 10px;
-  margin: 1vmax;
+  transition: all 0.3s ease;
+  flex: 1 1 160px;
+  max-width: 200px;
+  min-width: 140px;
+  font-size: 18px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  border: none;
+  outline: none;
 }
 
 .pixel-btn:hover {
-  filter: brightness(1.05);
-  padding-top: 1vmax;
+  transform: translateY(-3px) scale(1.03);
+  filter: brightness(1.1) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
 }
 
 @keyframes fadeInSlide {
@@ -77,22 +116,94 @@ body {
 .animated {
   opacity: 0;
   animation: fadeInSlide 0.8s ease-in-out forwards;
+  animation-delay: 0.1s;
 }
 
-
 .volver-atras {
-  width: fit-content;
   font-family: "RetroComputer", sans-serif;
-  padding: 1vmax;
-  border-radius: 8px;
+  padding: 12px 24px;
+  border-radius: 30px;
   cursor: pointer;
-  background: #f44336;
-  color: black;
-  position: sticky;
-  margin-bottom: 1vmax;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  font-size: 16px;
+  margin-top: 20px;
+  transition: all 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .volver-atras:hover {
-  filter: brightness(1.4);
-  color: white;
+  background: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+@media (max-width: 1024px) and (orientation: landscape) {
+  #menu-container {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  .container {
+    gap: 10px;
+  }
+
+  .pixel-btn {
+    width: 150px;
+    height: 70px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+    align-items: flex-start;
+  }
+
+  #menu-container {
+    padding: 20px 15px;
+    margin: 10px 0;
+  }
+
+  #game-title {
+    max-width: 280px;
+    margin-bottom: 15px;
+  }
+
+  .text-btn {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .pixel-btn {
+    width: 200px;
+    height: 70px;
+    font-size: 16px;
+    flex: 0 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  #game-title {
+    max-width: 220px;
+  }
+
+  .text-btn {
+    font-size: 16px;
+  }
+
+  .pixel-btn {
+    width: 180px;
+    height: 60px;
+    font-size: 15px;
+  }
 }

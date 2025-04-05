@@ -1,0 +1,137 @@
+@media (max-width: 768px) and (orientation: portrait) {
+  body {
+    height: auto;
+    min-height: 100vh;
+    padding: 10px;
+    align-items: flex-start;
+  }
+
+  .game-container {
+    max-width: 95%;
+    padding: 15px;
+    max-height: none;
+    margin: 10px 0;
+  }
+
+  .game-title {
+    font-size: 1.5rem;
+  }
+
+  .search-section {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-container {
+    width: 100%;
+  }
+
+  #confirmPokemon {
+    margin-left: 0;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .attributes-header,
+  .attributes-grid,
+  .attempt-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .attribute-badge,
+  .attribute-card {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+
+  #silueta-container {
+    height: 200px;
+    margin: 10px 0;
+  }
+
+  #pokemon-silhouette {
+    height: 150px;
+  }
+}
+
+@media (max-width: 900px) and (orientation: landscape) {
+  body {
+    align-items: flex-start;
+    padding-top: 20px;
+  }
+
+  .game-container {
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .attributes-header,
+  .attributes-grid,
+  .attempt-container {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .attribute-badge {
+    font-size: 10px;
+    padding: 4px 6px;
+  }
+
+  .attribute-card {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  #silueta-container {
+    height: 150px;
+  }
+
+  #pokemon-silhouette {
+    height: 120px;
+  }
+}
+
+@media (max-width: 320px) {
+  .attributes-header,
+  .attributes-grid,
+  .attempt-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .attribute-badge {
+    font-size: 10px;
+  }
+}
+
+@media (max-height: 500px) {
+  body {
+    align-items: flex-start;
+    padding-top: 10px;
+  }
+
+  .game-container {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+  .attributes-header,
+  .attributes-grid,
+  .attempt-container {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+
+  #pokemonInput {
+    font-size: 14px;
+  }
+}
+
+
