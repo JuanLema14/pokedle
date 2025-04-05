@@ -52,6 +52,13 @@ body::before {
   color: #e5bf2b;
 }
 
+.text-btn-game {
+  font-family: "RetroComputer", sans-serif;
+  padding-top: 0.5vmax;
+  font-size: 1.2vmax;
+  color: black
+}
+
 .search-section {
   display: flex;
   justify-content: center;

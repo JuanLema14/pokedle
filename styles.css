@@ -61,7 +61,7 @@ body::before {
 .text-btn {
   font-family: "RetroComputer", sans-serif;
   font-size: clamp(16px, 2.5vw, 24px);
-  color: #333;
+  color: white;
   margin-bottom: 20px;
 }
 
@@ -98,7 +98,9 @@ body::before {
 }
 
 .pixel-btn:hover {
+  color: #fff;
   transform: translateY(-3px) scale(1.03);
+  padding-top: 0.5vmax;
   filter: brightness(1.1) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
 }
 
@@ -116,27 +118,25 @@ body::before {
 .animated {
   opacity: 0;
   animation: fadeInSlide 0.8s ease-in-out forwards;
-  animation-delay: 0.1s;
 }
 
 .volver-atras {
+  width: fit-content;
   font-family: "RetroComputer", sans-serif;
-  padding: 12px 24px;
-  border-radius: 30px;
+  padding: 1vmax;
+  border-radius: 8px;
   cursor: pointer;
-  background: #e74c3c;
-  color: white;
-  border: none;
-  font-size: 16px;
-  margin-top: 20px;
-  transition: all 0.3s;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  background: #f44336;
+  color: black;
+  position: sticky;
+  margin-bottom: 1vmax;
 }
 
 .volver-atras:hover {
   background: #c0392b;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  color: white;
 }
 
 
@@ -176,6 +176,7 @@ body::before {
   .text-btn {
     font-size: 18px;
     margin-bottom: 15px;
+    color: white;
   }
 
   .container {
@@ -198,6 +199,7 @@ body::before {
   }
 
   .text-btn {
+    color: white;
     font-size: 16px;
   }
 
