@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const guessesContainer = document.getElementById("guessesContainer");
   const gameInfo = document.getElementById("gameInfo");
   const pokemonInfo = document.getElementById("pokemonInfo");
-  
+
   const TYPE_TRANSLATIONS = {
     normal: "Normal",
     fire: "Fuego",
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         silhouetteImg.style.objectFit = "contain";
         silhouetteImg.style.display = "block";
         silhouetteImg.style.margin = "0 auto";
-        
+
         siluetaContainer.innerHTML = "";
         siluetaContainer.appendChild(silhouetteImg);
       }
@@ -362,6 +362,23 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   function revealPokemon() {
+    const silhouetteImg = document.getElementById("pokemon-silhouette");
+    if (silhouetteImg) {
+      silhouetteImg.style.transition = "filter 1.5s ease-in-out";
+      silhouetteImg.style.filter = "brightness(1) contrast(1)";
+
+      silhouetteImg.animate(
+        [
+          { boxShadow: "0 0 0 0 rgba(255, 255, 255, 0.7)" },
+          { boxShadow: "0 0 20px 10px rgba(255, 255, 255, 0.7)" },
+          { boxShadow: "0 0 0 0 rgba(255, 255, 255, 0)" },
+        ],
+        {
+          duration: 1500,
+          easing: "ease-out",
+        }
+      );
+    }
     gameInfo.style.display = "block";
     pokemonInfo.innerHTML = `
       <div style="text-align: center;">
@@ -386,10 +403,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   try {
     await initGame();
-    
+
     loader.style.display = "none";
     gameContent.style.display = "block";
-    
   } catch (error) {
     loader.innerHTML = `
       <p class="loader-text" style="color: #ff3333;">
